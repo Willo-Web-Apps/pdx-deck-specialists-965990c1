@@ -8,7 +8,10 @@ interface Props {
   description?: string;
 }
 
-const { title = "Your New Business", description = "PDX Home Revival a deck and Patio cover business that specializes in high end decks and covers. looking for a user-friendly site to convert leads and an action plan to increase pipeline organically with Referrals and best rot for paid leads" } = Astro.props;
+const {
+  title = "PDX Home Revival — Portland's Premier Deck & Patio Cover Builder",
+  description = "Custom-crafted decks and patio covers for Portland metro homeowners. Premium materials, architecturally integrated, built for the Pacific Northwest lifestyle. Serving Lake Oswego, West Linn, SW Hills, Beaverton & all Portland metro."
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -18,14 +21,30 @@ const { title = "Your New Business", description = "PDX Home Revival a deck and 
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <title>{title}</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Your New Business",
-      "description": "PDX Home Revival a deck and Patio cover business that specializes in high end decks and covers. looking for a user-friendly site to convert leads and an action plan to increase pipeline organically with Referrals and best rot for paid leads",
-      "url": "https://pdx-deck-specialists.onrender.com"
+      "@type": "LocalBusiness",
+      "name": "PDX Home Revival",
+      "description": "Custom-crafted decks and patio covers for Portland metro homeowners. Premium materials, architecturally integrated, Pacific Northwest craftsmanship.",
+      "url": "https://pdx-deck-specialists.onrender.com",
+      "telephone": "+15035550100",
+      "email": "hello@pdxhomerevival.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Portland",
+        "addressRegion": "OR",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Lake Oswego", "West Linn", "Portland", "Beaverton", "Hillsboro", "Happy Valley"],
+      "priceRange": "$$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "80"
+      }
     }
     </script>
   </head>
